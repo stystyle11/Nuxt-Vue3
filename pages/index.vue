@@ -41,13 +41,8 @@ export default {
 #main {
   display: grid;
   grid-column: 1 / span 16;
-  grid-row: 2 / span 14;
+  grid-row: 3 / span 13;
 
-  background: linear-gradient(
-    90deg,
-    rgb(210, 194, 148) 40%,
-    rgb(255, 255, 255) 100%
-  );
   justify-content: center;
   align-content: center;
 }

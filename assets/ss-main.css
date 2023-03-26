@@ -28,5 +28,9 @@ body {
   padding: 0;
   border: 0;
   font-family: Arial, sans-serif;
-  background-color: aliceblue;
+  background: linear-gradient(
+    90deg,
+    rgb(210, 194, 148) 40%,
+    rgb(255, 255, 255) 100%
+  );
 }

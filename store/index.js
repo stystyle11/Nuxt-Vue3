@@ -11,6 +11,9 @@ export const mutations = {
   updateLoggedIn: (state, data) => {
     state.loggedIn = data
   },
+  getListItems: (state, data) => {
+    state.listRealState = data
+  },
 }
 export const getters = {
   validatedUser: (state) => {

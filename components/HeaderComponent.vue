@@ -10,7 +10,7 @@ export default {}
 #headercomponent {
   display: grid;
   grid-column: 1 / span 16;
-  grid-row: 1 / 2;
+  grid-row: 1 / span 2;
   background: linear-gradient(
     90deg,
     rgb(255, 255, 255) 40%,
@@ -22,5 +22,7 @@ export default {}
   text-shadow: 1px 1px 1px #222;
   padding: 1em;
   margin-bottom: 0.1em;
+  min-height: 90px;
+  max-height: 90px;
 }
 </style>

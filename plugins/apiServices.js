@@ -27,12 +27,3 @@ export const getUser = async () => {
 
   return response.data.success
 }
-
-export const getList = async () => {
-  const response = await axios.post(
-    'https://sys-dev.searchandstay.com/api/admin/house_rules',
-    data
-  )
-
-  return response.data.entities
-}

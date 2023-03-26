@@ -1,0 +1,19 @@
+export const state = () => ({
+  bearerToken: '',
+  listRealState: [],
+  loggedIn: false,
+})
+
+export const mutations = {
+  updateToken: (state, data) => {
+    state.bearerToken = data
+  },
+  updateLoggedIn: (state, data) => {
+    state.loggedIn = data
+  },
+}
+export const getters = {
+  validatedUser: (state) => {
+    return state.validated
+  },
+}

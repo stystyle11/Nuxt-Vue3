@@ -41,8 +41,5 @@
     "jest-environment-jsdom": "^29.1.2",
     "prettier": "^2.7.1",
     "vue-jest": "^3.0.4"
-  },
-  "overrides": {
-    "vue": "latest"
   }
 }

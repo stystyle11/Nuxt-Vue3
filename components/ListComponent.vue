@@ -6,7 +6,7 @@
 
 <script>
 import axios from 'axios'
-// import { getList } from '~/plugins/apiServices.js'
+import { getToken } from '~/plugins/apiServices.js'
 export default {
   data() {
     return {}
@@ -23,18 +23,20 @@ export default {
 
   methods: {
     async getListItems() {
-      const token = this.$store.state.bearerToken
+      const token = await getToken()
 
-      const response = await axios.get(
-        'https://sys-dev.searchandstay.com/api/admin/house_rules',
-        {
+      axios
+        .get('https://sys-dev.searchandstay.com/api/admin/house_rules', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
-      )
-
-      return response
+        })
+        .then((response) => {
+          return response
+        })
+        .catch((error) => {
+          return error
+        })
     },
   },
 }

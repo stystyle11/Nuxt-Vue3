@@ -28,7 +28,6 @@ export default {
     async getList() {
       const bearerToken = await getToken()
       this.$store.commit('updateToken', bearerToken)
-      this.token = this.$store.state.bearerToken
 
       const userLoggedIn = await getUser()
 

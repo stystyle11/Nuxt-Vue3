@@ -1,6 +1,6 @@
 export const state = () => ({
   bearerToken: '',
-  listRealState: [],
+  listRealState: {},
   loggedIn: false,
 })
 
@@ -11,7 +11,7 @@ export const mutations = {
   updateLoggedIn: (state, data) => {
     state.loggedIn = data
   },
-  getListItems: (state, data) => {
+  updateListItems: (state, data) => {
     state.listRealState = data
   },
 }

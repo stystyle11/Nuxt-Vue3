@@ -1,17 +1,45 @@
 <script>
+import axios from 'axios'
 import ListComponent from '@/components/ListComponent.vue'
+import { getToken } from '~/plugins/apiServices.js'
 export default {
   name: 'HomePage',
   components: {
     ListComponent,
   },
   middleware: 'auth',
+  computed: {
+    getList() {
+      return this.$store.state.listRealState
+    },
+  },
+  mounted() {
+    this.getListItems()
+  },
+  methods: {
+    async getListItems() {
+      const token = await getToken()
+      axios
+        .get('https://sys-dev.searchandstay.com/api/admin/house_rules', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          const data = response.data.data.entities
+          this.$store.commit('updateListItems', data)
+        })
+        .catch((error) => {
+          return error
+        })
+    },
+  },
 }
 </script>
 <template>
   <div id="main">
     <h2 class="title">This is the Home Page</h2>
-    <ListComponent> </ListComponent>
+    <ListComponent :list="getList"> </ListComponent>
   </div>
 </template>
 <style scoped>
